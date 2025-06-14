@@ -1,4 +1,4 @@
-# 🤖 Discutez avec vos PDF en local grâce à Ollama + LangChain
+# 🤖 Requêter des fichiers PDF en local grâce à Ollama + LangChain
 
 Une puissante application locale RAG (Retrieval Augmented Generation) vous permet de discuter avec vos documents PDF grâce à Ollama et LangChain. Ce projet comprend un notebook Jupyter pour l'expérimentation et une interface web Streamlit pour une interaction simplifiée.
 
