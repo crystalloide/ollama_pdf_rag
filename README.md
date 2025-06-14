@@ -112,7 +112,7 @@ source ./venv/Scripts/activate
 # Sous Windows avec cmd :
 .\venv\Scripts\activate
 
-python.exe -m pip install --upgrade pip
+python -m pip install --upgrade pip
 
 pip install -r requirements.txt
 ```
