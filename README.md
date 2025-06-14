@@ -107,7 +107,7 @@ sudo apt install python-is-python3
 python -m venv venv
 
 # Sous linux : 
-source venv/bin/activate      source ./venv/Scripts/activate
+source venv/bin/activate     
 # Sous Windows avec bash :
 source ./venv/Scripts/activate
 # Sous Windows avec cmd :
