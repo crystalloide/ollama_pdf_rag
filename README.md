@@ -152,6 +152,11 @@ Ouvrez ensuite votre navigateur à l'adresse `http://localhost:8501`
 *Interface Streamlit affichant la visionneuse PDF et les fonctionnalités de chat*
 
 #### Option 2 : Bloc-notes Jupyter
+
+```bash
+sudo apt install jupyter-core
+```
+
 ```bash
 jupyter notebook
 ```
