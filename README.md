@@ -1,200 +1,197 @@
-# 🤖 Chat with PDF locally using Ollama + LangChain
+# 🤖 Discutez avec vos PDF en local grâce à Ollama + LangChain
 
-A powerful local RAG (Retrieval Augmented Generation) application that lets you chat with your PDF documents using Ollama and LangChain. This project includes both a Jupyter notebook for experimentation and a Streamlit web interface for easy interaction.
+Une puissante application locale RAG (Retrieval Augmented Generation) vous permet de discuter avec vos documents PDF grâce à Ollama et LangChain. Ce projet comprend un notebook Jupyter pour l'expérimentation et une interface web Streamlit pour une interaction simplifiée.
 
-[![Python Tests](https://github.com/tonykipkemboi/ollama_pdf_rag/actions/workflows/tests.yml/badge.svg)](https://github.com/tonykipkemboi/ollama_pdf_rag/actions/workflows/tests.yml)
+[![Tests Python](https://github.com/tonykipkemboi/ollama_pdf_rag/actions/workflows/tests.yml/badge.svg)](https://github.com/tonykipkemboi/ollama_pdf_rag/actions/workflows/tests.yml)
 
-## Project Structure
+## Structure du projet
 ```
 ollama_pdf_rag/
-├── src/                      # Source code
-│   ├── app/                  # Streamlit application
-│   │   ├── components/       # UI components
-│   │   │   ├── chat.py      # Chat interface
-│   │   │   ├── pdf_viewer.py # PDF display
-│   │   │   └── sidebar.py   # Sidebar controls
-│   │   └── main.py          # Main app
-│   └── core/                 # Core functionality
-│       ├── document.py       # Document processing
-│       ├── embeddings.py     # Vector embeddings
-│       ├── llm.py           # LLM setup
-│       └── rag.py           # RAG pipeline
-├── data/                     # Data storage
-│   ├── pdfs/                # PDF storage
-│   │   └── sample/          # Sample PDFs
-│   └── vectors/             # Vector DB storage
-├── notebooks/               # Jupyter notebooks
-│   └── experiments/         # Experimental notebooks
-├── tests/                   # Unit tests
-├── docs/                    # Documentation
-└── run.py                   # Application runner
+├── src/ # Code source
+│ ├── app/ # Application Streamlit
+│ │ ├── components/ # Composants d'interface utilisateur
+│ │ │ ├── chat.py # Interface de chat
+│ │ │ ├── pdf_viewer.py # Affichage PDF
+│ │ │ └── sidebar.py # Contrôles de la barre latérale
+│ │ └── main.py # Application principale
+│ └── core/ # Fonctionnalités principales
+│ ├── document.py # Traitement des documents
+│ ├── embeddings.py # Incorporations vectorielles
+│ ├── llm.py # Configuration LLM
+│ └── rag.py # Pipeline RAG
+├── data/ # Stockage de données
+│ ├── pdfs/ # Stockage PDF
+│ │ └── sample/ # Exemples de PDF
+│ └── vectors/ # Stockage de base de données vectorielles
+├── notebooks/ # Bloc-notes Jupyter
+│ └── experiments/ # Bloc-notes expérimentaux
+├── tests/ # Tests unitaires
+├── docs/ # Documentation
+└── run.py # Exécuteur d'application
 ```
 
-## 📺 Video Tutorial
+## 📺 Tutoriel vidéo
 <a href="https://youtu.be/ztBJqzBU5kc">
-  <img src="https://img.youtube.com/vi/ztBJqzBU5kc/hqdefault.jpg" alt="Watch the video" width="100%">
+<img src="https://img.youtube.com/vi/ztBJqzBU5kc/hqdefault.jpg" alt="Regarder la vidéo" width="100%">
 </a>
 
-## ✨ Features
+## ✨ Fonctionnalités
 
-- 🔒 Fully local processing - no data leaves your machine
-- 📄 PDF processing with intelligent chunking
-- 🧠 Multi-query retrieval for better context understanding
-- 🎯 Advanced RAG implementation using LangChain
-- 🖥️ Clean Streamlit interface
-- 📓 Jupyter notebook for experimentation
+- 🔒 Traitement entièrement local : aucune donnée ne quitte votre machine
+- 📄 Traitement PDF avec segmentation intelligente
+- 🧠 Récupération multi-requêtes pour une meilleure compréhension du contexte
+- 🎯 Implémentation RAG avancée avec LangChain
+- 🖥️ Interface Streamlit épurée
+- 📓 Bloc-notes Jupyter pour expérimentation
 
-## 🚀 Getting Started
+## 🚀 Premiers pas
 
-### Prerequisites
+### Prérequis
 
-1. **Install Ollama**
-   - Visit [Ollama's website](https://ollama.ai) to download and install
-   - Pull required models:
-     ```bash
-     ollama pull llama3.2  # or your preferred model
-     ollama pull nomic-embed-text
-     ```
+1. **Installer Ollama**
+- Visitez le site web d'Ollama (https://ollama.ai) pour télécharger et installer
+- Extraire les modèles requis :
+```bash
+ollama pull llama3.2 # ou votre modèle préféré
+ollama pull nomic-embed-text
+```
 
-2. **Clone Repository**
-   ```bash
-   git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git
-   cd ollama_pdf_rag
-   ```
+2. **Cloner le dépôt**
+```bash
+git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git
+cd ollama_pdf_rag
+```
 
-3. **Set Up Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+3. **Configurer l'environnement**
+```bash
+python -m venv venv
+source venv/bin/activate # Sous Windows : .\venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-   Key dependencies and their versions:
-   ```txt
-   ollama==0.4.4
-   streamlit==1.40.0
-   pdfplumber==0.11.4
-   langchain==0.1.20
-   langchain-core==0.1.53
-   langchain-ollama==0.0.2
-   chromadb==0.4.22
-   ```
+Clé Dépendances et leurs versions :
+```txt
+ollama==0.4.4
+streamlit==1.40.0
+pdfplumber==0.11.4
+langchain==0.1.20
+langchain-core==0.1.53
+langchain-ollama==0.0.2
+chromadb==0.4.22
+```
 
-### 🎮 Running the Application
+### 🎮 Exécution de l'application
 
-#### Option 1: Streamlit Interface
+#### Option 1 : Interface Streamlit
 ```bash
 python run.py
 ```
-Then open your browser to `http://localhost:8501`
+Ouvrez ensuite votre navigateur à l'adresse `http://localhost:8501`
 
-![Streamlit UI](st_app_ui.png)
-*Streamlit interface showing PDF viewer and chat functionality*
+![Interface utilisateur Streamlit](st_app_ui.png)
+*Interface Streamlit affichant la visionneuse PDF et les fonctionnalités de chat*
 
-#### Option 2: Jupyter Notebook
+#### Option 2 : Bloc-notes Jupyter
 ```bash
-jupyter notebook
+bloc-notes Jupyter
 ```
-Open `updated_rag_notebook.ipynb` to experiment with the code
+Ouvrez `updated_rag_notebook.ipynb` pour tester Le code
 
-## 💡 Usage Tips
+## 💡 Conseils d'utilisation
 
-1. **Upload PDF**: Use the file uploader in the Streamlit interface or try the sample PDF
-2. **Select Model**: Choose from your locally available Ollama models
-3. **Ask Questions**: Start chatting with your PDF through the chat interface
-4. **Adjust Display**: Use the zoom slider to adjust PDF visibility
-5. **Clean Up**: Use the "Delete Collection" button when switching documents
+1. **Télécharger un PDF** : Utilisez l'outil de téléchargement de fichiers dans l'interface Streamlit ou essayez l'exemple de PDF
+2. **Sélectionner un modèle** : Choisissez parmi les modèles Ollama disponibles localement
+3. **Poser des questions** : Commencez à discuter avec votre PDF via l'interface de discussion
+4. **Ajuster l'affichage** : Utilisez le curseur de zoom pour ajuster la visibilité du PDF
+5. **Nettoyer** : Utilisez le bouton « Supprimer la collection » lorsque vous changez de document
 
-## 🤝 Contributing
+## 🤝 Contribuer
 
-Feel free to:
-- Open issues for bugs or suggestions
-- Submit pull requests
-- Comment on the YouTube video for questions
-- Star the repository if you find it useful!
+N'hésitez pas à :
+- Ouvrir des problèmes pour signaler des bugs ou des suggestions
+- Soumettre des demandes d'extraction
+- Commenter la vidéo YouTube pour poser des questions
+- Ajouter une étoile au dépôt si vous le trouvez utile !
 
-## ⚠️ Troubleshooting
+## ⚠️ Dépannage
 
-- Ensure Ollama is running in the background
-- Check that required models are downloaded
-- Verify Python environment is activated
-- For Windows users, ensure WSL2 is properly configured if using Ollama
+- Assurez-vous qu'Ollama s'exécute en arrière-plan
+- Vérifiez que les modèles requis sont téléchargés
+- Vérifiez que l'environnement Python est activé
+- Pour les utilisateurs Windows, assurez-vous que WSL2 est correctement configuré si vous utilisez Ollama
 
-### Common Errors
+### Erreurs courantes
 
-#### ONNX DLL Error
-If you encounter this error:
+#### Erreur DLL ONNX
+Si vous rencontrez cette erreur :
 ```
-DLL load failed while importing onnx_copy2py_export: a dynamic link Library (DLL) initialization routine failed.
+Échec du chargement de la DLL lors de l'importation de onnx_copy2py_export : une routine d'initialisation de la bibliothèque de liens dynamiques (DLL) a échoué.
 ```
 
-Try these solutions:
-1. Install Microsoft Visual C++ Redistributable:
-   - Download and install both x64 and x86 versions from [Microsoft's official website](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
-   - Restart your computer after installation
+Essayez ces solutions :
+1. Installez Microsoft Visual C++ Redistributable :
+- Téléchargez et installez les versions x64 et x86 depuis le site web officiel de Microsoft (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
+- Redémarrez votre ordinateur après l'installation
 
-2. If the error persists, try installing ONNX Runtime manually:
-   ```bash
-   pip uninstall onnxruntime onnxruntime-gpu
-   pip install onnxruntime
-   ```
-
-#### CPU-Only Systems
-If you're running on a CPU-only system:
-
-1. Ensure you have the CPU version of ONNX Runtime:
-   ```bash
-   pip uninstall onnxruntime-gpu  # Remove GPU version if installed
-   pip install onnxruntime  # Install CPU-only version
-   ```
-
-2. You may need to modify the chunk size in the code to prevent memory issues:
-   - Reduce `chunk_size` to 500-1000 if you experience memory problems
-   - Increase `chunk_overlap` for better context preservation
-
-Note: The application will run slower on CPU-only systems, but it will still work effectively.
-
-## 🧪 Testing
-
-### Running Tests
+2. Si l'erreur persiste, essayez d'installer ONNX Runtime manuellement :
 ```bash
-# Run all tests
+pip uninstall onnxruntime onnxruntime-gpu
+pip install onnxruntime
+```
+#### Systèmes CPU uniquement
+Si vous utilisez un système CPU uniquement :
+
+1. Assurez-vous de disposer de la version CPU d'ONNX Runtime :
+```bash
+pip uninstall onnxruntime-gpu # Supprimer la version GPU si installée
+pip install onnxruntime # Installer la version CPU uniquement
+```
+
+2. Vous devrez peut-être modifier la taille des blocs dans le code pour éviter les problèmes de mémoire :
+- Réduisez « chunk_size » à 500-1000 si vous rencontrez des problèmes de mémoire
+- Augmentez « chunk_overlap » pour une meilleure préservation du contexte
+
+Remarque : L'application sera plus lente sur les systèmes CPU uniquement, mais fonctionnera toujours efficacement.
+
+## 🧪 Tests
+
+### Exécution des tests
+```bash
+# Exécution de tous les tests
 python -m unittest discover tests
 
-# Run tests verbosely
+# Exécution détaillée des tests
 python -m unittest discover tests -v
 ```
 
-### Pre-commit Hooks
-The project uses pre-commit hooks to ensure code quality. To set up:
+### Hooks pré-commit
+Le projet utilise des hooks pré-commit pour garantir la qualité du code. Pour configurer :
 
 ```bash
 pip install pre-commit
 pre-commit install
 ```
 
-This will:
-- Run tests before each commit
-- Run linting checks
-- Ensure code quality standards are met
+Cela permet :
+- d'exécuter des tests avant chaque commit
+- d'effectuer des vérifications linting
+- de garantir le respect des normes de qualité du code
 
-### Continuous Integration
-The project uses GitHub Actions for CI. On every push and pull request:
-- Tests are run on multiple Python versions (3.9, 3.10, 3.11)
-- Dependencies are installed
-- Ollama models are pulled
-- Test results are uploaded as artifacts
+### Intégration continue
+Le projet utilise GitHub Actions pour l'intégration continue. À chaque requête push et pull :
+- Les tests sont exécutés sur plusieurs versions de Python (3.9, 3.10, 3.11)
+- Les dépendances sont installées
+- Les modèles Ollama sont extraits
+- Les résultats des tests sont téléchargés sous forme d'artefacts
 
-## 📝 License
+## 📝 Licence
 
-This project is open source and available under the MIT License.
+Ce projet est open source et disponible sous licence MIT.
 
 ---
 
-## ⭐️ Star History
+## ⭐️ Histoire des étoiles
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tonykipkemboi/ollama_pdf_rag&type=Date)](https://star-history.com/#tonykipkemboi/ollama_pdf_rag&Date)
+[![Graphique de l'histoire des étoiles](https://api.star-history.com/svg?repos=tonykipkemboi/ollama_pdf_rag&type=Date)](https://star-history.com/#tonykipkemboi/ollama_pdf_rag&Date)
 
-Built with ❤️ by [Tony Kipkemboi!](https://tonykipkemboi.com)
-
-Follow me on [X](https://x.com/tonykipkemboi) | [LinkedIn](https://www.linkedin.com/in/tonykipkemboi/) | [YouTube](https://www.youtube.com/@tonykipkemboi) | [GitHub](https://github.com/tonykipkemboi)
+Créé avec ❤️ par [Tony Kipkemboi!](https://tonykipkemboi.com)
