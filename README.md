@@ -54,6 +54,14 @@ ollama_pdf_rag/
 
 1. **Installer Ollama**
 - Visitez le site web d'Ollama (https://ollama.ai) pour télécharger et installer
+- Lancer le serveur :
+```bash
+ollama serve
+```
+- Lister les modèles déjà présents le cas échéant :
+```bash
+ollama list
+```
 - Extraire les modèles requis :
 ```bash
 ollama pull llama3.2 # ou votre modèle préféré
