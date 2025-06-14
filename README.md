@@ -89,15 +89,27 @@ source ./venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-Clé Dépendances et leurs versions :
+Dépendances Clés et leurs versions :
 ```txt
 ollama==0.4.4
 streamlit==1.40.0
 pdfplumber==0.11.4
-langchain==0.1.20
-langchain-core==0.1.53
-langchain-ollama==0.0.2
-chromadb==0.4.22
+langchain==0.3.14
+langchain-core==0.3.29
+langchain-ollama==0.2.2
+langchain_community==0.3.14
+langchain_text_splitters==0.3.5
+unstructured>=0.16.12
+unstructured[all-docs]>=0.16.12
+onnx>=1.17.0
+protobuf==5.29.2
+chromadb>=0.4.22
+Pillow==10.4.0
+numpy==1.26.4
+pytest==7.4.4
+pytest-cov==4.1.0
+coverage==7.4.0
+pydantic==2.10.4(venv)
 ```
 
 ### 🎮 Exécution de l'application
