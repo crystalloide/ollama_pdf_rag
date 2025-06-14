@@ -72,6 +72,10 @@ Pendant l'installation, sélectionnez "Desktop development with C++" workload
 
 1. **Installer Ollama**
 - Visitez le site web d'Ollama (https://ollama.ai) pour télécharger et installer
+- Sous Linux:
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
 - Lancer le serveur :
 ```bash
 ollama serve
