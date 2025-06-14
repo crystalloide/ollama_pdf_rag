@@ -78,7 +78,14 @@ cd ollama_pdf_rag
 3. **Configurer l'environnement**
 ```bash
 python -m venv venv
-source venv/bin/activate # Sous Windows : .\venv\Scripts\activate
+
+# Sous linux : 
+source venv/bin/activate      source ./venv/Scripts/activate
+# Sous Windows avec bash :
+source ./venv/Scripts/activate
+# Sous Windows avec cmd :
+.\venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
