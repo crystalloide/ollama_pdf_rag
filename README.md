@@ -70,7 +70,8 @@ ollama pull nomic-embed-text
 
 2. **Cloner le dépôt**
 ```bash
-git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git
+-- git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git
+git clone https://github.com/crystalloide/ollama_pdf_rag.git
 cd ollama_pdf_rag
 ```
 
