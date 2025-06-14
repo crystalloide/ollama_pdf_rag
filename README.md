@@ -147,7 +147,7 @@ Ouvrez ensuite votre navigateur à l'adresse `http://localhost:8501`
 ```bash
 jupyter notebook
 ```
-Ouvrez `updated_rag_notebook.ipynb` pour tester Le code
+Ouvrez `updated_rag_notebook.ipynb` pour expérimenter et tester avec le code fourni
 
 ## 💡 Conseils d'utilisation
 
