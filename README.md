@@ -145,7 +145,7 @@ Ouvrez ensuite votre navigateur à l'adresse `http://localhost:8501`
 
 #### Option 2 : Bloc-notes Jupyter
 ```bash
-bloc-notes Jupyter
+jupyter notebook
 ```
 Ouvrez `updated_rag_notebook.ipynb` pour tester Le code
 
