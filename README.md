@@ -99,6 +99,10 @@ cd ollama_pdf_rag
 
 3. **Configurer l'environnement**
 ```bash
+sudo apt install python3.12-venv
+```
+
+```bash
 python -m venv venv
 
 # Sous linux : 
