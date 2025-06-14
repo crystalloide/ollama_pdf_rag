@@ -52,6 +52,24 @@ ollama_pdf_rag/
 
 ### Prérequis
 
+0. Sous Windows :
+
+Installer Microsoft Visual Studio Build Tools
+La méthode la plus simple consiste à installer Microsoft C++ Build Tools :
+
+Téléchargez « Microsoft C++ Build Tools » depuis la page de téléchargement de Visual Studio.
+Pendant l'installation, assurez-vous de sélectionner :
+
+- "C++ build tools" workload
+- Windows 10/11 SDK (latest version)
+- MSVC v143 compiler toolset
+
+Alternative : Installer Visual Studio Community (si vous préférez un IDE complet) :
+Téléchargez Visual Studio Community (gratuit)
+Pendant l'installation, sélectionnez "Desktop development with C++" workload
+
+
+
 1. **Installer Ollama**
 - Visitez le site web d'Ollama (https://ollama.ai) pour télécharger et installer
 - Lancer le serveur :
