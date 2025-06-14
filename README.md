@@ -52,7 +52,7 @@ ollama_pdf_rag/
 
 ### Prérequis
 
-0. Sous Windows :
+0. **Sous Windows**
 
 Installer Microsoft Visual Studio Build Tools
 La méthode la plus simple consiste à installer Microsoft C++ Build Tools :
